@@ -8,38 +8,14 @@
 import SwiftUI
 import SwiftData
 
-//struct World{
-//    public var overWorld: [OverWorldCoord]
-//    public var theNether: [NetherCoord]
-//    public var theEnd: [TheEndCoord]
-//}
-
-struct OverWorldCoord{
-    public var x: Double
-    public var y: Double
-    public var z: Double
-    public var name: String
-}
-
-struct NetherCoord{
-    public var x: Double
-    public var y: Double
-    public var z: Double
-    public var name: String
-}
-
-struct TheEndCoord{
-    public var x: Double
-    public var y: Double
-    public var z: Double
-    public var name: String
-}
-
 struct ContentView: View {
     
     @Environment(\.modelContext) var context
-    @Query var worlds: [World]
-    @State private var addWorld = false
+    @Query var worlds: [Bookmark]
+    @State var addWorld = Worlds()
+    @State private var worldName = ""
+    @State private var showingWorldCreate = false
+    @State private var showingBookmarks = false
     
     var body: some View {
         VStack {
@@ -61,15 +37,16 @@ struct ContentView: View {
                             .toolbar{
                                 ToolbarItem{
                                     Button(action: {
-                                        addWorld.toggle()
+                                        showingWorldCreate = true
                                     }, label: {
                                         Label("Add World", systemImage: "plus")
                                     })
                                     .buttonStyle(.bordered)
+                                    .popover(isPresented: $showingWorldCreate, content: {
+                                        TextField("Give your world a name:", text: $worldName)
+                                    })
                                 }
                             }
-                            //.sheet(isPresented: $addWorld)
-                        //Text("Worlds popuate here*")
                     }
                 }
                 Spacer()
@@ -83,4 +60,5 @@ struct ContentView: View {
 // Delete function for World and Modify/Delete for inner world coordinates
 #Preview {
     ContentView()
+        .modelContainer(for: [Worlds.self, Bookmark.self])
 }

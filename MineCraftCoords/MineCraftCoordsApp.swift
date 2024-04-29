@@ -14,6 +14,6 @@ struct MineCraftCoordsApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: World.self)
+        .modelContainer(for: [Worlds.self, Bookmark.self])
     }
 }

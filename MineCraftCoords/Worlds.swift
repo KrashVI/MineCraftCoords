@@ -12,19 +12,13 @@ import SwiftData
 final class Worlds{
     var name: String
     var timeCreated: Date
-    var Overworld: [OverWorldCoord]
-    var Nether: [NetherCoord]
-    var TheEnd: [TheEndCoord]
+    var coords: [Bookmark]
     
     init(name: String = "",
          timeCreated: Date = .now,
-         Overworld: [OverWorldCoord] = [],
-         Nether: [NetherCoord] = [],
-         TheEnd: [TheEndCoord] = []){
+         coords: [Bookmark] = []){
         self.name = name
         self.timeCreated = timeCreated
-        self.Overworld = Overworld
-        self.Nether = Nether
-        self.TheEnd = TheEnd
+        self.coords = coords
     }
 }
