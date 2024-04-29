@@ -11,6 +11,9 @@
 		008188612BD94D740075575C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008188602BD94D740075575C /* ContentView.swift */; };
 		008188632BD94D750075575C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008188622BD94D750075575C /* Assets.xcassets */; };
 		008188662BD94D750075575C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008188652BD94D750075575C /* Preview Assets.xcassets */; };
+		00889B6D2BDFDDDF00E16322 /* Worlds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00889B6C2BDFDDDF00E16322 /* Worlds.swift */; };
+		00889B6F2BDFDFF300E16322 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00889B6E2BDFDFF300E16322 /* World.swift */; };
+		00889B712BDFE22E00E16322 /* minecraft_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00889B702BDFE22E00E16322 /* minecraft_font.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		008188602BD94D740075575C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		008188622BD94D750075575C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		008188652BD94D750075575C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		00889B6C2BDFDDDF00E16322 /* Worlds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worlds.swift; sourceTree = "<group>"; };
+		00889B6E2BDFDFF300E16322 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		00889B702BDFE22E00E16322 /* minecraft_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minecraft_font.ttf; sourceTree = SOURCE_ROOT; };
+		00889B722BDFE24600E16322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +58,12 @@
 		0081885D2BD94D740075575C /* MineCraftCoords */ = {
 			isa = PBXGroup;
 			children = (
+				00889B722BDFE24600E16322 /* Info.plist */,
+				00889B702BDFE22E00E16322 /* minecraft_font.ttf */,
 				0081885E2BD94D740075575C /* MineCraftCoordsApp.swift */,
 				008188602BD94D740075575C /* ContentView.swift */,
+				00889B6C2BDFDDDF00E16322 /* Worlds.swift */,
+				00889B6E2BDFDFF300E16322 /* World.swift */,
 				008188622BD94D750075575C /* Assets.xcassets */,
 				008188642BD94D750075575C /* Preview Content */,
 			);
@@ -125,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00889B712BDFE22E00E16322 /* minecraft_font.ttf in Resources */,
 				008188662BD94D750075575C /* Preview Assets.xcassets in Resources */,
 				008188632BD94D750075575C /* Assets.xcassets in Resources */,
 			);
@@ -137,7 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00889B6D2BDFDDDF00E16322 /* Worlds.swift in Sources */,
 				008188612BD94D740075575C /* ContentView.swift in Sources */,
+				00889B6F2BDFDFF300E16322 /* World.swift in Sources */,
 				0081885F2BD94D740075575C /* MineCraftCoordsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +288,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MineCraftCoords/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MineCraftCoords/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,6 +317,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MineCraftCoords/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MineCraftCoords/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

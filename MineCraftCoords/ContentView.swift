@@ -8,11 +8,11 @@
 import SwiftUI
 import SwiftData
 
-struct World{
-    public var overWorld: [OverWorldCoord]
-    public var theNether: [NetherCoord]
-    public var theEnd: [TheEndCoord]
-}
+//struct World{
+//    public var overWorld: [OverWorldCoord]
+//    public var theNether: [NetherCoord]
+//    public var theEnd: [TheEndCoord]
+//}
 
 struct OverWorldCoord{
     public var x: Double
@@ -36,15 +36,44 @@ struct TheEndCoord{
 }
 
 struct ContentView: View {
+    
+    @Environment(\.modelContext) var context
+    @Query var worlds: [World]
+    @State private var addWorld = false
+    
     var body: some View {
         VStack {
             ZStack{
                 Image("minecraft-bedrock-logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .overlay(Text("Coordinates")
+                        .foregroundColor(.yellow)
+                        .font(.custom("Minecraft Regular", size: 46)), alignment: .bottom)
+                
             }
-            Text("Hit Me")
-            Spacer()
+            Text("My Worlds")
+            Divider()
+            NavigationStack{
+                VStack{
+                    ZStack{
+                        Text("")
+                            .toolbar{
+                                ToolbarItem{
+                                    Button(action: {
+                                        addWorld.toggle()
+                                    }, label: {
+                                        Label("Add World", systemImage: "plus")
+                                    })
+                                    .buttonStyle(.bordered)
+                                }
+                            }
+                            //.sheet(isPresented: $addWorld)
+                        //Text("Worlds popuate here*")
+                    }
+                }
+                Spacer()
+            }
         }
     }
 }
