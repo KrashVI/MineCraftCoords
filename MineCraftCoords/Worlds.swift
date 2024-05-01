@@ -9,14 +9,15 @@ import Foundation
 import SwiftData
 
 @Model
-final class Worlds{
+class Worlds{
+    
     var name: String
     var timeCreated: Date
-    var coords: [Bookmark]
+    var coords:[Bookmark] = [Bookmark]()
     
     init(name: String = "",
          timeCreated: Date = .now,
-         coords: [Bookmark] = []){
+         coords: [Bookmark] = [Bookmark]()){
         self.name = name
         self.timeCreated = timeCreated
         self.coords = coords

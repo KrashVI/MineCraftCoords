@@ -10,9 +10,20 @@ import SwiftData
 
 struct CreateWorldView: View {
     
-    @Environment(\.dismiss) var dismis
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var context
+    @State var worldCreate = Worlds()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            TextField("World Name: ", text: $worldCreate.name)
+            Button("Create World"){
+                addWorld(worldCreate)
+            }
+        }
+    }
+    func addWorld(_ worldCreate: Worlds){
+        context.insert(worldCreate)
     }
 }
 
