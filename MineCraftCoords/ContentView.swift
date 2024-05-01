@@ -12,7 +12,6 @@ struct ContentView: View {
     
     @Environment(\.modelContext) var context
     @Query var worlds: [Worlds]
-    //@State var addWorld = Worlds()
     @State private var worldName = ""
     @State private var showingWorldCreate = false
     @State private var showingBookmarks = false
@@ -28,20 +27,18 @@ struct ContentView: View {
                         .font(.custom("Minecraft Regular", size: 46)), alignment: .bottom)
                 
             }
-            //Text("My Worlds")
-            //Divider()
             NavigationStack{
                 VStack{
                     ZStack{
                         List{
                             ForEach(worlds){world in
-                                HStack{
-                                    VStack(alignment: .leading) {
-                                        Text(world.name)
-                                            .font(.custom("Minecraft Regular", size: 28))
-                                            .bold()
-                                        //                                        Text("\(world.timeCreated, format: Date.FormatStyle(date: .numeric, time: .shortened))")
-                                        
+                                VStack{
+                                    HStack{
+                                        VStack(alignment: .leading) {
+                                            NavigationLink(world.name, destination: WorldView())
+                                                .font(.custom("Minecraft Regular", size: 28))
+                                                .bold()
+                                        }
                                     }
                                 }
                                 .swipeActions{
@@ -81,6 +78,9 @@ struct ContentView: View {
     }
     func showWorldCreate(){
         showingWorldCreate = true
+    }
+    func showBookmarkView(){
+        
     }
 }
 

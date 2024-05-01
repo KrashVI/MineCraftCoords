@@ -15,6 +15,8 @@
 		00889B6F2BDFDFF300E16322 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00889B6E2BDFDFF300E16322 /* Bookmark.swift */; };
 		00889B712BDFE22E00E16322 /* minecraft_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00889B702BDFE22E00E16322 /* minecraft_font.ttf */; };
 		00889B742BDFEB4E00E16322 /* CreateWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00889B732BDFEB4E00E16322 /* CreateWorldView.swift */; };
+		00E513942BE2900D00DEDCF6 /* WorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E513932BE2900D00DEDCF6 /* WorldView.swift */; };
+		00E513962BE2901C00DEDCF6 /* CreateBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E513952BE2901C00DEDCF6 /* CreateBookmarkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		00889B702BDFE22E00E16322 /* minecraft_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minecraft_font.ttf; sourceTree = SOURCE_ROOT; };
 		00889B722BDFE24600E16322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00889B732BDFEB4E00E16322 /* CreateWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorldView.swift; sourceTree = "<group>"; };
+		00E513932BE2900D00DEDCF6 /* WorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldView.swift; sourceTree = "<group>"; };
+		00E513952BE2901C00DEDCF6 /* CreateBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBookmarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				00889B732BDFEB4E00E16322 /* CreateWorldView.swift */,
 				00889B6C2BDFDDDF00E16322 /* Worlds.swift */,
 				00889B6E2BDFDFF300E16322 /* Bookmark.swift */,
+				00E513932BE2900D00DEDCF6 /* WorldView.swift */,
+				00E513952BE2901C00DEDCF6 /* CreateBookmarkView.swift */,
 				008188622BD94D750075575C /* Assets.xcassets */,
 				008188642BD94D750075575C /* Preview Content */,
 			);
@@ -153,10 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				00889B6D2BDFDDDF00E16322 /* Worlds.swift in Sources */,
+				00E513962BE2901C00DEDCF6 /* CreateBookmarkView.swift in Sources */,
 				008188612BD94D740075575C /* ContentView.swift in Sources */,
 				00889B6F2BDFDFF300E16322 /* Bookmark.swift in Sources */,
 				00889B742BDFEB4E00E16322 /* CreateWorldView.swift in Sources */,
 				0081885F2BD94D740075575C /* MineCraftCoordsApp.swift in Sources */,
+				00E513942BE2900D00DEDCF6 /* WorldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
