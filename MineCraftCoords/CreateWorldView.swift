@@ -15,10 +15,12 @@ struct CreateWorldView: View {
     @State var worldCreate = Worlds()
     
     var body: some View {
-        List{
+        List {
             TextField("World Name: ", text: $worldCreate.name)
             Button("Create World"){
                 addWorld(worldCreate)
+                
+                dismiss()
             }
         }
     }
