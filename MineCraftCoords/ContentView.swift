@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var worldName = ""
     @State private var showingWorldCreate = false
     @State private var showingBookmarks = false
+    @State var worldID: String = ""
     
     var body: some View {
         VStack {
@@ -35,9 +36,10 @@ struct ContentView: View {
                                 VStack{
                                     HStack{
                                         VStack(alignment: .leading) {
-                                            NavigationLink(world.name, destination: WorldView())
+                                            NavigationLink(world.name, destination: WorldView(worldID: $worldID))
                                                 .font(.custom("Minecraft Regular", size: 28))
                                                 .bold()
+                                            Text(world.worldID)
                                         }
                                     }
                                 }
@@ -90,5 +92,5 @@ struct ContentView: View {
 // Delete function for World and Modify/Delete for inner world coordinates
 #Preview {
     ContentView()
-        .modelContainer(for: Worlds.self)
+        .modelContainer(for: [Worlds.self, Bookmark.self])
 }

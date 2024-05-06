@@ -13,12 +13,14 @@ struct CreateBookmarkView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     @State var bookmarkCreate = Bookmark()
+    @Binding var worldID: String
     
     var body: some View {
         List {
             TextField("World Name: ", text: $bookmarkCreate.name)
-            TextField("X Coordinate: ", _Double: $bookmarkCreate.XCoord)
+            //TextField("X Coordinate: ", text: $bookmarkCreate.XCoord)
             Button("Create World"){
+                bookmarkCreate.ID = worldID
                 addBookmark(bookmarkCreate)
                 
                 dismiss()
@@ -30,6 +32,7 @@ struct CreateBookmarkView: View {
     }
 }
 
-#Preview {
-    CreateBookmarkView()
-}
+//#Preview {
+//    CreateBookmarkView()
+//        .modelContainer(for: [Worlds.self, Bookmark.self])
+//}

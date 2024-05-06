@@ -12,7 +12,9 @@ struct WorldView: View {
     
     @Environment(\.modelContext) var context
     @Query var bookmarks: [Bookmark]
+    @State var createBookmark = Bookmark()
     @State private var showBookmarkCreate = false
+    @Binding var worldID: String
     
     var body: some View {
         
@@ -22,13 +24,14 @@ struct WorldView: View {
             VStack{
                 ZStack{
                     List{
-                        ForEach(bookmarks){bookmark in
+                        ForEach($bookmarks.bookmark, id: \.worldID){bookmark in
                             VStack{
                                 HStack{
                                     VStack(alignment: .leading) {
                                         Text(bookmark.name)
                                             .font(.custom("Minecraft Regular", size: 28))
                                             .bold()
+                                        Text(bookmark.worldID)
                                     }
                                 }
                             }
@@ -46,7 +49,6 @@ struct WorldView: View {
                             }
                         }
                     }
-                    //Text(Worlds.name)
                     .toolbar{
                         ToolbarItem{
                             Button(action: BookmarkCreate){
@@ -57,7 +59,7 @@ struct WorldView: View {
                     }
                     .sheet(isPresented: $showBookmarkCreate, content: {
                         NavigationStack{
-                            CreateBookmarkView()
+                            CreateBookmarkView(worldID: $worldID)
                         }
                         .presentationDetents([.medium])
                     })
@@ -71,6 +73,7 @@ struct WorldView: View {
     }
 }
 
-#Preview {
-    WorldView()
-}
+//#Preview {
+//    WorldView()
+//        .modelContainer(for: [Worlds.self, Bookmark.self])
+//}

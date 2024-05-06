@@ -13,11 +13,13 @@ struct CreateWorldView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     @State var worldCreate = Worlds()
+    var id: String = UUID().uuidString
     
     var body: some View {
         List {
             TextField("World Name: ", text: $worldCreate.name)
             Button("Create World"){
+                worldCreate.worldID = id
                 addWorld(worldCreate)
                 
                 dismiss()
@@ -31,4 +33,5 @@ struct CreateWorldView: View {
 
 #Preview {
     CreateWorldView()
+        .modelContainer(for: [Worlds.self, Bookmark.self])
 }

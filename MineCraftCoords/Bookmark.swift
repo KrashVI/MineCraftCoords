@@ -15,16 +15,19 @@ class Bookmark{
     var YCoord: Double
     var ZCoord: Double
     var worldType: String
+    var ID: String
     
     init(name: String = "",
          XCoord: Double = 0,
          YCoord: Double = 0,
          ZCoord: Double = 0,
-         worldType: String = ""){
+         worldType: String = "",
+         ID: String = ""){
         self.name = name
         self.XCoord = XCoord
         self.YCoord = YCoord
         self.ZCoord = ZCoord
         self.worldType = worldType
+        self.ID = ID
     }
 }

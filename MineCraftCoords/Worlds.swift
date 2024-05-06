@@ -13,13 +13,13 @@ class Worlds{
     
     var name: String
     var timeCreated: Date
-    var coords:[Bookmark] = [Bookmark]()
+    var worldID: String
     
     init(name: String = "",
          timeCreated: Date = .now,
-         coords: [Bookmark] = [Bookmark]()){
+         worldID: String = ""){
         self.name = name
         self.timeCreated = timeCreated
-        self.coords = coords
+        self.worldID = worldID
     }
 }
