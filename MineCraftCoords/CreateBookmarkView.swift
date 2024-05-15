@@ -13,14 +13,25 @@ struct CreateBookmarkView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     @State var bookmarkCreate = Bookmark()
-    @Binding var worldID: String
+    @State private var worldType = "OverWorld"
+    let worldTypes = ["OverWorld", "Nether", "End"]
+    @Binding var uniqueID: String
     
     var body: some View {
         List {
             TextField("World Name: ", text: $bookmarkCreate.name)
-            //TextField("X Coordinate: ", text: $bookmarkCreate.XCoord)
-            Button("Create World"){
-                bookmarkCreate.ID = worldID
+            TextField("X Coordinate: ", value: $bookmarkCreate.XCoord, format: .number)
+            TextField("Y Coordinate: ", value: $bookmarkCreate.YCoord, format: .number)
+            TextField("Z Coordinate: ", value: $bookmarkCreate.ZCoord, format: .number)
+            Picker("Select a world", selection: $worldType){
+                ForEach(worldTypes, id: \.self){
+                    Text($0)
+                }
+            }
+            .pickerStyle(.menu)
+        
+            Button("Create Bookmark"){
+                bookmarkCreate.matchingID = uniqueID
                 addBookmark(bookmarkCreate)
                 
                 dismiss()

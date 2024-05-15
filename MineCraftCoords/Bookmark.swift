@@ -15,19 +15,19 @@ class Bookmark{
     var YCoord: Double
     var ZCoord: Double
     var worldType: String
-    var ID: String
+    var matchingID: String
     
     init(name: String = "",
          XCoord: Double = 0,
          YCoord: Double = 0,
          ZCoord: Double = 0,
          worldType: String = "",
-         ID: String = ""){
+         matchingID: String = ""){
         self.name = name
         self.XCoord = XCoord
         self.YCoord = YCoord
         self.ZCoord = ZCoord
         self.worldType = worldType
-        self.ID = ID
+        self.matchingID = matchingID
     }
 }
